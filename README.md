@@ -11,7 +11,7 @@
 播放器有3种数据加载方式：
 1. 内建files.json方式：
 
-![播放页面](demo/screenshot-1709830964701.png)
+![播放页面](demo/screenshot-1709830551933.png)
 
 2. 浏览器路径中指定files.json的hash:
 
@@ -19,7 +19,7 @@
 
 3. 浏览器路径中指定files.json的路径:
 
-![播放页面](demo/screenshot-1709830551933.png)
+![播放页面](demo/screenshot-1709830964701.png)
 
 更多演示地址： 使用自定义IPFS网关 http://ipfs-gw.home.dlimba.top:89/ipfs/:hash
 
