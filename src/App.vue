@@ -17,17 +17,18 @@ onMounted(() => {
 let cover = ""
 async function init(){
   let hash = window.location.hash;
-  let files_json_file = "./files.json"
+  let files_json = "./files.json"
+
   if (hash !== "") {
-    let files_json = hash.match("files.json=(.*)")
-    if (files_json !== null) {
-      files_json_file = files_json[1]
-      if (files_json_file.substr(0, 6) !== "/ipfs/") {
-        files_json_file = "/ipfs/" + files_json_file
+    let files_json_hash = hash.match("files.json=(.*)")
+    if (files_json_hash !== null) {
+      files_json = files_json_hash[1]
+      if (files_json.slice(0, 6) !== "/ipfs/") {
+        files_json = "/ipfs/" + files_json
       }
     }
   }
-  await Axios.get(files_json_file).then((res) => {
+  await Axios.get(files_json).then((res) => {
     cover = res.data.cover
     play_video(res.data.files[0])
   });
@@ -45,12 +46,9 @@ function play_video(video_file) {
 }
 
 </script>
-
-
 <style scoped>
 #player {
   width: 1280px;
   height: 720px;
 }
-
 </style>

@@ -12,6 +12,15 @@ export default defineConfig({
         changeOrigin: true,
       }
     }
-  }
-
+  },
+  build:{
+    assetsDir: "./",
+    rollupOptions:{
+      output:{
+        entryFileNames:"[hash].js",
+        assetFileNames: "[hash].[ext]"
+      }
+    }
+  },
+  base: "./"
 })
