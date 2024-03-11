@@ -1,11 +1,30 @@
 <template>
-  <div>
-    <div id="player"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div id="player"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h1>{{ title }}</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+        <p>{{ description }}</p>
+      </div>
+      <div class="col-4">
+        <button type="button" class="btn btn-outline-light" v-for="(item,index) in filelist" data-bs-toggle="tooltip" :data-bs-title="item.title" @click="play(index)">
+          {{ index + 1 }}
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import {onMounted} from 'vue'
+import {ref, onMounted} from 'vue'
 import Axios from 'axios'
 import xgplayer from 'xgplayer';
 import HlsJsPlugin from 'xgplayer-hls.js';
@@ -15,7 +34,10 @@ onMounted(() => {
   init()
 })
 let cover = ""
-async function init(){
+const title = ref("")
+const description = ref("")
+const filelist = ref([])
+async function init() {
   let hash = window.location.hash;
   let files_json = "./files.json"
 
@@ -30,9 +52,13 @@ async function init(){
   }
   await Axios.get(files_json).then((res) => {
     cover = res.data.cover
+    title.value = res.data.title
+    description.value = res.data.description
     play_video(res.data.files[0])
+    filelist.value = res.data.files
   });
 }
+
 function play_video(video_file) {
   new xgplayer({
     id: 'player',
@@ -44,7 +70,9 @@ function play_video(video_file) {
     poster: cover,
   });
 }
-
+function play(item) {
+  play_video(filelist.value[item])
+}
 </script>
 <style scoped>
 #player {
