@@ -15,8 +15,8 @@
         <p>{{ description }}</p>
       </div>
       <div class="col-4">
-        <button type="button" class="btn btn-outline-light" v-for="(item,index) in filelist" data-bs-toggle="tooltip" :data-bs-title="item.title" @click="play(index)">
-          {{ index + 1 }}
+        <button type="button" class="btn btn-outline-light multiple" v-for="(item,index) in filelist" data-bs-toggle="tooltip" :data-bs-title="item.title" @click="play(index)">
+          {{ padding(index + 1, Math.log(filelist.length) / Math.log(10))}}
         </button>
       </div>
     </div>
@@ -64,8 +64,8 @@ function play_video(video_file) {
     id: 'player',
     url: video_file.url,
     plugins: video_file.type === "m3u8" ? [HlsJsPlugin] : [],
-    height: "720",
-    width: "1280",
+    height: "729",
+    width: "1296",
     autoplay: true,
     poster: cover,
   });
@@ -73,10 +73,19 @@ function play_video(video_file) {
 function play(item) {
   play_video(filelist.value[item])
 }
+function padding(num, length) {
+  for(let len = (num + "").length; len < length; len = num.length) {
+   num = "0" + num;
+  }
+  return num;
+ }
 </script>
 <style scoped>
 #player {
-  width: 1280px;
-  height: 720px;
+  width: 1296px;
+  height: 729px;
+}
+.multiple{
+  margin: 0.2em;
 }
 </style>
