@@ -4,7 +4,7 @@
 
 > 播放器将在ipfs网络上发布，用户可以使用IPFS网关进行访问。
 
-演示地址：[Demo1](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeifhbjsrh46njpiyvigjhuphazocd5lhygotxp2wwtsnzci6pl73by/)
+演示地址：[Demo1](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeie2ritcfdlvas33jafzyzej7j5ud5jr7naw7ku6sewgfd23zrmrua/)
 
 ![播放页面](img/screenshot-1709831272590.jpg)
 
@@ -26,9 +26,9 @@
 
 |      数据加载方式       | 播放MP4                                                                                                                                                                                                | 播放M3U8                                                                                                                                                                                               |
 |:-----------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   内建files.json    | [Demo1](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeifhbjsrh46njpiyvigjhuphazocd5lhygotxp2wwtsnzci6pl73by/)                                                                                         | [Demo4](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeicae3rhg3foakkdfq5hk5d5uuzwuln2lfemk7i24p4moyrfb6kq2i/)                                                                                         |
-| 指定files.json的hash | [Demo2](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeifhbjsrh46njpiyvigjhuphazocd5lhygotxp2wwtsnzci6pl73by/#files.json=bafkreidxpp6jgyral6mumbydufrrit7hyeqboubkoqkalqleamky3qvcoq)                  | [Demo5](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeifhbjsrh46njpiyvigjhuphazocd5lhygotxp2wwtsnzci6pl73by/#files.json=bafkreiaaqgt3iqszfg22qgalatm3vxxiappw4tfh5ujeoes4i7gjk7w4ge)                  |
-|  指定files.json的路径  | [Demo3](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeifhbjsrh46njpiyvigjhuphazocd5lhygotxp2wwtsnzci6pl73by/#files.json=/ipfs/bafybeigvraepp3nmhpoohuybvmcfjkpsdtv3cvhsz6vafxn5675ahsmiue/files.json) | [Demo6](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeifhbjsrh46njpiyvigjhuphazocd5lhygotxp2wwtsnzci6pl73by/#files.json=/ipfs/bafybeidvdwluytvf2f5e374lk5kvcg63ivdvbwvixmrreb43725xtot73i/files.json) |
+|   内建files.json    | [Demo1](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeie2ritcfdlvas33jafzyzej7j5ud5jr7naw7ku6sewgfd23zrmrua/)                                                                                         | [Demo4](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeicdbxxzofbwowu3vdg7j4to35p4h7g553nhaanji4oe7zjbberu2u/)                                                                                         |
+| 指定files.json的hash | [Demo2](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeie2ritcfdlvas33jafzyzej7j5ud5jr7naw7ku6sewgfd23zrmrua/#files.json=bafkreidxpp6jgyral6mumbydufrrit7hyeqboubkoqkalqleamky3qvcoq)                  | [Demo5](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeie2ritcfdlvas33jafzyzej7j5ud5jr7naw7ku6sewgfd23zrmrua/#files.json=bafkreiaaqgt3iqszfg22qgalatm3vxxiappw4tfh5ujeoes4i7gjk7w4ge)                  |
+|  指定files.json的路径  | [Demo3](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeie2ritcfdlvas33jafzyzej7j5ud5jr7naw7ku6sewgfd23zrmrua/#files.json=/ipfs/bafybeigvraepp3nmhpoohuybvmcfjkpsdtv3cvhsz6vafxn5675ahsmiue/files.json) | [Demo6](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeie2ritcfdlvas33jafzyzej7j5ud5jr7naw7ku6sewgfd23zrmrua/#files.json=/ipfs/bafybeidvdwluytvf2f5e374lk5kvcg63ivdvbwvixmrreb43725xtot73i/files.json) |
 
 # 捐赠
 ![支付宝捐赠](img/donate_alipay.jpg)
