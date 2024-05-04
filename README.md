@@ -4,7 +4,7 @@
 
 > 播放器将在ipfs网络上发布，用户可以使用IPFS网关进行访问。
 
-演示地址：[Demo1](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeigvraepp3nmhpoohuybvmcfjkpsdtv3cvhsz6vafxn5675ahsmiue/)
+演示地址：[Demo1](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeifhbjsrh46njpiyvigjhuphazocd5lhygotxp2wwtsnzci6pl73by/)
 
 ![播放页面](img/screenshot-1709831272590.jpg)
 
@@ -21,13 +21,14 @@
 
 ![播放页面](img/screenshot-1709830964701.jpg)
 
-更多演示地址： 使用自定义IPFS网关 http://ipfs-gw.home.dlimba.top:89/ipfs/:hash
+更多演示地址： [点击进入更多演示地址]( http://ipfs-video.home.dlimba.top:89/)
+使用自定义IPFS网关 http://ipfs-gw.home.dlimba.top:89/ipfs/:hash
 
 |      数据加载方式       | 播放MP4                                                                                                                                                                                                | 播放M3U8                                                                                                                                                                                               |
 |:-----------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   内建files.json    | [Demo1](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeigvraepp3nmhpoohuybvmcfjkpsdtv3cvhsz6vafxn5675ahsmiue/)                                                                                         | [Demo4](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeidvdwluytvf2f5e374lk5kvcg63ivdvbwvixmrreb43725xtot73i/)                                                                                         |
-| 指定files.json的hash | [Demo2](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeigvraepp3nmhpoohuybvmcfjkpsdtv3cvhsz6vafxn5675ahsmiue/#files.json=bafkreidxpp6jgyral6mumbydufrrit7hyeqboubkoqkalqleamky3qvcoq)                  | [Demo5](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeigvraepp3nmhpoohuybvmcfjkpsdtv3cvhsz6vafxn5675ahsmiue/#files.json=bafkreiaaqgt3iqszfg22qgalatm3vxxiappw4tfh5ujeoes4i7gjk7w4ge)                  |
-|  指定files.json的路径  | [Demo3](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeigvraepp3nmhpoohuybvmcfjkpsdtv3cvhsz6vafxn5675ahsmiue/#files.json=/ipfs/bafybeigvraepp3nmhpoohuybvmcfjkpsdtv3cvhsz6vafxn5675ahsmiue/files.json) | [Demo6](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeigvraepp3nmhpoohuybvmcfjkpsdtv3cvhsz6vafxn5675ahsmiue/#files.json=/ipfs/bafybeidvdwluytvf2f5e374lk5kvcg63ivdvbwvixmrreb43725xtot73i/files.json) |
+|   内建files.json    | [Demo1](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeifhbjsrh46njpiyvigjhuphazocd5lhygotxp2wwtsnzci6pl73by/)                                                                                         | [Demo4](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeicae3rhg3foakkdfq5hk5d5uuzwuln2lfemk7i24p4moyrfb6kq2i/)                                                                                         |
+| 指定files.json的hash | [Demo2](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeifhbjsrh46njpiyvigjhuphazocd5lhygotxp2wwtsnzci6pl73by/#files.json=bafkreidxpp6jgyral6mumbydufrrit7hyeqboubkoqkalqleamky3qvcoq)                  | [Demo5](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeifhbjsrh46njpiyvigjhuphazocd5lhygotxp2wwtsnzci6pl73by/#files.json=bafkreiaaqgt3iqszfg22qgalatm3vxxiappw4tfh5ujeoes4i7gjk7w4ge)                  |
+|  指定files.json的路径  | [Demo3](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeifhbjsrh46njpiyvigjhuphazocd5lhygotxp2wwtsnzci6pl73by/#files.json=/ipfs/bafybeigvraepp3nmhpoohuybvmcfjkpsdtv3cvhsz6vafxn5675ahsmiue/files.json) | [Demo6](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeifhbjsrh46njpiyvigjhuphazocd5lhygotxp2wwtsnzci6pl73by/#files.json=/ipfs/bafybeidvdwluytvf2f5e374lk5kvcg63ivdvbwvixmrreb43725xtot73i/files.json) |
 
 # 捐赠
 ![支付宝捐赠](img/donate_alipay.jpg)
@@ -39,6 +40,7 @@ ETH: 0x8fEEdB4ceC6C2357aD75dB7d65691297d04498cf
 
 # 鸣谢
 [IPFS](https://github.com/ipfs/kubo)  
-[Filecoin](https://github.com/filecoin-project/lotus)
-vite
-xgplayer
+[Filecoin](https://github.com/filecoin-project/lotus)  
+[AWS](https://aws.amazon.com/)
+[vite](https://vitejs.cn/)  
+[xgplayer](https://h5player.bytedance.com/)  
