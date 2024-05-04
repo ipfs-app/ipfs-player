@@ -13,18 +13,18 @@
         </h1>
         <p>
           标签：
-          <span v-for="lable in lables">
-            <span v-if="lable==='H264'" class="badge text-bg-success">
-              {{ lable }}
+          <span v-for="label in labels">
+            <span v-if="label==='H264'" class="badge text-bg-success">
+              {{ label }}
             </span>
-            <span v-else-if="lable==='H265'" class="badge text-bg-danger">
-              {{ lable }}
+            <span v-else-if="label==='H265'" class="badge text-bg-danger">
+              {{ label }}
             </span>
-            <span v-else-if="lable==='aac'" class="badge text-bg-success">
-              {{ lable }}
+            <span v-else-if="label==='aac'" class="badge text-bg-success">
+              {{ label }}
             </span>
             <span v-else class="badge text-bg-info">
-              {{ lable }}
+              {{ label }}
             </span>
         </span>
         </p>
@@ -60,7 +60,7 @@ const num = ref("")
 const description = ref("")
 const filelist = ref([])
 const single = ref(true)
-const lables = ref([])
+const labels = ref([])
 
 async function init() {
   let hash = window.location.hash;
@@ -85,10 +85,9 @@ async function init() {
       num.value = padding(1, Math.log(filelist.value.length) / Math.log(10))
     }
     play_video(res.data.files[0])
-    lable_check()
-    if (res.data.lables !== undefined) {
-      lables.value = lables.value.concat(res.data.labels)
-
+    label_check()
+    if (res.data.labels !== undefined) {
+      labels.value = labels.value.concat(res.data.labels)
     }
   });
 }
@@ -99,7 +98,7 @@ function play_video(video_file) {
   } else {
     document.title = title.value + " " + num.value + " IPFS Player"
   }
-  new xgplayer({
+  const player = new xgplayer({
     id: 'player',
     url: video_file.url,
     plugins: video_file.type === "m3u8" ? [HlsJsPlugin] : [],
@@ -108,6 +107,16 @@ function play_video(video_file) {
     autoplay: true,
     poster: cover,
   });
+  player.on(xgplayer.Events.CSS_FULLSCREEN_CHANGE, (isFullscreen) => {
+    const playbox = document.getElementById("player")
+    if (isFullscreen) {
+      playbox.style.width = '100%'
+      playbox.style.height = '100%'
+    } else {
+      playbox.style.width = "1296px"
+      playbox.style.height = "729px"
+    }
+  })
 }
 
 function play(item) {
@@ -122,10 +131,10 @@ function padding(num, length) {
   return num;
 }
 
-function lable_check() {
-  function lable_add(lable) {
-    if (lables.value.indexOf(lable) < 0) {
-      lables.value.push(lable)
+function label_check() {
+  function label_add(label) {
+    if (labels.value.indexOf(label) < 0) {
+      labels.value.push(label)
     }
   }
 
@@ -136,13 +145,13 @@ function lable_check() {
       if (stream["codec_type"] === "audio" || stream["codec_type"] === "video") {
         switch (stream["codec_name"]) {
           case  "h264":
-            lable_add("H264")
+            label_add("H264")
             break;
           case  "hevc":
-            lable_add("H265")
+            label_add("H265")
             break;
           case "aac":
-            lable_add("aac")
+            label_add("aac")
             break;
           default:
         }
