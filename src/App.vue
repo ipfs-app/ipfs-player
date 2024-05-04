@@ -11,6 +11,23 @@
           {{ title }}
           <span class="fs-3" v-if="! single">{{ num }}</span>
         </h1>
+        <p>
+          标签：
+          <span v-for="lable in lables">
+            <span v-if="lable==='H264'" class="badge text-bg-success">
+              {{ lable }}
+            </span>
+            <span v-else-if="lable==='H265'" class="badge text-bg-danger">
+              {{ lable }}
+            </span>
+            <span v-else-if="lable==='aac'" class="badge text-bg-success">
+              {{ lable }}
+            </span>
+            <span v-else class="badge text-bg-info">
+              {{ lable }}
+            </span>
+        </span>
+        </p>
       </div>
     </div>
     <div class="row">
@@ -43,6 +60,7 @@ const num = ref("")
 const description = ref("")
 const filelist = ref([])
 const single = ref(true)
+const lables = ref([])
 
 async function init() {
   let hash = window.location.hash;
@@ -67,6 +85,11 @@ async function init() {
       num.value = padding(1, Math.log(filelist.value.length) / Math.log(10))
     }
     play_video(res.data.files[0])
+    lable_check()
+    if (res.data.lables !== undefined) {
+      lables.value = lables.value.concat(res.data.labels)
+
+    }
   });
 }
 
@@ -97,6 +120,35 @@ function padding(num, length) {
     num = "0" + num;
   }
   return num;
+}
+
+function lable_check() {
+  function lable_add(lable) {
+    if (lables.value.indexOf(lable) < 0) {
+      lables.value.push(lable)
+    }
+  }
+
+  for (let i = 0; i < filelist.value.length; i++) {
+    let mediainfo = filelist.value[i]["mediainfo"]
+    for (let j = 0; j < mediainfo["streams"].length; j++) {
+      let stream = mediainfo["streams"][j]
+      if (stream["codec_type"] === "audio" || stream["codec_type"] === "video") {
+        switch (stream["codec_name"]) {
+          case  "h264":
+            lable_add("H264")
+            break;
+          case  "hevc":
+            lable_add("H265")
+            break;
+          case "aac":
+            lable_add("aac")
+            break;
+          default:
+        }
+      }
+    }
+  }
 }
 </script>
 <style scoped>
