@@ -42,6 +42,16 @@
       </div>
     </div>
   </div>
+  <div class="btn-group mirror" role="group">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Mirrors
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" target="_blank" :href="mirror+url" v-for="mirror in mirrors">{{ mirror }}</a></li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -61,7 +71,8 @@ const description = ref("")
 const filelist = ref([])
 const single = ref(true)
 const labels = ref([])
-
+const mirrors = ref([])
+const url = ref("")
 async function init() {
   let hash = window.location.hash;
   let files_json = "./files.json"
@@ -75,6 +86,10 @@ async function init() {
       }
     }
   }
+  await Axios.get("https://raw.githubusercontent.com/ipfs/public-gateway-checker/main/gateways.json").then((res) => {
+    url.value = window.location.href.replace(/http[s]?:\/\/[^/]+/,"")
+    mirrors.value = res.data
+  })
   await Axios.get(files_json).then((res) => {
     cover = res.data["cover"]
     title.value = res.data.title
@@ -168,5 +183,10 @@ function label_check() {
 
 .multiple {
   margin: 0.2em;
+}
+.mirror {
+  position: absolute;
+  top: 2em;
+  right: 2em;
 }
 </style>
