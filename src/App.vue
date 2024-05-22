@@ -41,6 +41,26 @@
         </button>
       </div>
     </div>
+     <div class="row donate">
+      <div class="col-2">
+        <img src="../img/donate_alipay.jpg" alt="donate alipay">
+      </div>
+      <div class="col-2">
+        <img src="../img/donate_eth.jpg" alt="donate eth">
+      </div>
+      <div class="col-2">
+        <img src="../img/donate_filecoin.jpg" alt="donate filecoin">
+      </div>
+      <div class="col-2">
+        <img src="../img/donate_alipay.jpg" alt="donate alipay">
+      </div>
+      <div class="col-2">
+        <img src="../img/donate_eth.jpg" alt="donate eth">
+      </div>
+      <div class="col-2">
+        <img src="../img/donate_filecoin.jpg" alt="donate filecoin">
+      </div>
+    </div>
   </div>
   <div class="btn-group mirror" role="group">
     <div class="btn-group" role="group">
@@ -188,5 +208,17 @@ function label_check() {
   position: absolute;
   top: 2em;
   right: 2em;
+}
+.donate {
+  padding-top: 8em;
+}
+.donate img{
+  width: 100%;
+  border-radius: 1em;
+  transition: 0.3s;
+  filter: opacity(18%);
+}
+.donate img:hover{
+  filter: opacity(80%);
 }
 </style>
