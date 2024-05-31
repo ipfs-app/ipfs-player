@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <video id="player" :poster="cover" controls autoplay class="video-js vjs-big-play-centered">
+        <video id="player" controls autoplay class="video-js vjs-big-play-centered">
         </video>
       </div>
     </div>
@@ -148,6 +148,7 @@ function play_video(video_file) {
     src: video_file.url
   }];
   const player = videojs('player');
+  player.poster(cover)
   player.ready(function () {
     const obj = this;
     obj.src(sources);
@@ -229,10 +230,5 @@ function label_check() {
 
 .footer a {
   margin-right: 0.7em;
-}
-</style>
-<style>
-.xgplayer > .xgplayer-poster {
-  background-size: contain;
 }
 </style>
