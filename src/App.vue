@@ -117,7 +117,7 @@ async function init() {
       }
     }
   }
-  await Axios.get("https://raw.githubusercontent.com/ipfs/public-gateway-checker/main/gateways.json").then((res) => {
+  Axios.get("https://raw.githubusercontent.com/ipfs/public-gateway-checker/main/gateways.json").then((res) => {
     url.value = window.location.href.replace(/http[s]?:\/\/[^/]+/, "")
     mirrors.value = res.data
   })
