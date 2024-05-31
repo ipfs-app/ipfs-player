@@ -241,3 +241,8 @@ function label_check() {
   margin-right: 0.7em;
 }
 </style>
+<style>
+.xgplayer > .xgplayer-poster {
+  background-size: contain;
+}
+</style>
