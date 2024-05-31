@@ -2,7 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <div id="player"></div>
+        <video id="player" :poster="cover" controls autoplay class="video-js vjs-big-play-centered">
+        </video>
       </div>
     </div>
     <div class="row">
@@ -41,7 +42,7 @@
         </button>
       </div>
     </div>
-     <div class="row donate">
+    <div class="row donate">
       <div class="col-2">
         <img src="../img/donate_alipay.jpg" alt="donate alipay">
       </div>
@@ -77,9 +78,7 @@
 <script setup>
 import {ref, onMounted} from 'vue'
 import Axios from 'axios'
-import xgplayer from 'xgplayer';
-import HlsJsPlugin from 'xgplayer-hls.js';
-import 'xgplayer/dist/index.min.css';
+import videojs from 'video.js'
 
 onMounted(() => {
   init()
@@ -133,25 +132,16 @@ function play_video(video_file) {
   } else {
     document.title = title.value + " " + num.value + " IPFS Player"
   }
-  const player = new xgplayer({
-    id: 'player',
-    url: video_file.url,
-    plugins: video_file.type === "m3u8" ? [HlsJsPlugin] : [],
-    height: "729",
-    width: "1296",
-    autoplay: true,
-    poster: cover,
+  const sources = [{
+    type: video_file.type === "m3u8" ? "application/x-mpegURL" : "video/mp4",
+    src: video_file.url
+  }];
+  const player = videojs('player');
+  player.ready(function () {
+    const obj = this;
+    obj.src(sources);
+    obj.load();
   });
-  player.on(xgplayer.Events.CSS_FULLSCREEN_CHANGE, (isFullscreen) => {
-    const playbox = document.getElementById("player")
-    if (isFullscreen) {
-      playbox.style.width = '100%'
-      playbox.style.height = '100%'
-    } else {
-      playbox.style.width = "1296px"
-      playbox.style.height = "729px"
-    }
-  })
 }
 
 function play(item) {
