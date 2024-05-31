@@ -1,7 +1,7 @@
 {
   "name": "ipfs-player",
   "private": true,
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "child_process": "^1.0.2",
     "vite": "^5.2.11"
   }
 }

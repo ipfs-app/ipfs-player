@@ -41,7 +41,7 @@
         </button>
       </div>
     </div>
-     <div class="row donate">
+    <div class="row donate">
       <div class="col-2">
         <img src="../img/donate_alipay.jpg" alt="donate alipay">
       </div>
@@ -60,6 +60,15 @@
       <div class="col-2">
         <img src="../img/donate_filecoin.jpg" alt="donate filecoin">
       </div>
+    </div>
+    <hr>
+    <div class="row footer">
+      <p class="text-center">
+        <a class="link-secondary" :href="'https://github.com/ipfs-app/ipfs-player/commit/'+hash" target="_blank">修订版本
+          {{ hash }}</a>
+        <a class="link-secondary" href="https://github.com/ipfs-app/ipfs-player" target="_blank">查看源码</a>
+        <a class="link-secondary" href="https://github.com/ipfs-app/ipfs-player/issues" target="_blank">报告 bug</a>
+      </p>
     </div>
   </div>
   <div class="btn-group mirror" role="group">
@@ -93,6 +102,8 @@ const single = ref(true)
 const labels = ref([])
 const mirrors = ref([])
 const url = ref("")
+const hash = import.meta.env.VITE_GIT_COMMIT_HASH;
+
 async function init() {
   let hash = window.location.hash;
   let files_json = "./files.json"
@@ -107,7 +118,7 @@ async function init() {
     }
   }
   await Axios.get("https://raw.githubusercontent.com/ipfs/public-gateway-checker/main/gateways.json").then((res) => {
-    url.value = window.location.href.replace(/http[s]?:\/\/[^/]+/,"")
+    url.value = window.location.href.replace(/http[s]?:\/\/[^/]+/, "")
     mirrors.value = res.data
   })
   await Axios.get(files_json).then((res) => {
@@ -204,21 +215,29 @@ function label_check() {
 .multiple {
   margin: 0.2em;
 }
+
 .mirror {
   position: absolute;
   top: 2em;
   right: 2em;
 }
+
 .donate {
   padding-top: 8em;
 }
-.donate img{
+
+.donate img {
   width: 100%;
   border-radius: 1em;
   transition: 0.3s;
   filter: opacity(18%);
 }
-.donate img:hover{
+
+.donate img:hover {
   filter: opacity(80%);
+}
+
+.footer a {
+  margin-right: 0.7em;
 }
 </style>
