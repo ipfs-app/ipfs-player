@@ -41,7 +41,7 @@
         </button>
       </div>
     </div>
-    <div class="row donate">
+    <div class="row donate" v-if="showDonate">
       <div class="col-2">
         <img src="../img/donate_alipay.jpg" alt="donate alipay">
       </div>
@@ -103,7 +103,7 @@ const labels = ref([])
 const mirrors = ref([])
 const url = ref("")
 const hash = import.meta.env.VITE_GIT_COMMIT_HASH;
-
+const showDonate = location.hostname!=='ipfs-gw.imba.cc'
 async function init() {
   let hash = window.location.hash;
   let files_json = "./files.json"
