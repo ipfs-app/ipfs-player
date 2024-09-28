@@ -104,6 +104,8 @@ const mirrors = ref([])
 const url = ref("")
 const hash = import.meta.env.VITE_GIT_COMMIT_HASH;
 const showDonate = location.hostname!=='ipfs-gw.imba.cc'
+const isfullscreen = ref(false)
+const starttime = ref(0)
 async function init() {
   let hash = window.location.hash;
   let files_json = "./files.json"
@@ -115,6 +117,15 @@ async function init() {
       if (files_json.slice(0, 6) !== "/ipfs/") {
         files_json = "/ipfs/" + files_json
       }
+    }
+
+    let fullscreen_hash = hash.match("fullscreen=(.*)")
+    if (fullscreen_hash !== null) {
+      isfullscreen.value = fullscreen_hash[1] === 'true'
+    }
+    let starttime_hash = hash.match("fullscreen=(.*)")
+    if (starttime_hash !== null) {
+      starttime.value = starttime_hash[1]
     }
   }
   Axios.get("https://raw.githubusercontent.com/ipfs/public-gateway-checker/main/gateways.json").then((res) => {
@@ -152,6 +163,7 @@ function play_video(video_file) {
     width: "1296",
     autoplay: true,
     poster: cover,
+    startTime: starttime.value,
   });
   player.on(xgplayer.Events.CSS_FULLSCREEN_CHANGE, (isFullscreen) => {
     const playbox = document.getElementById("player")
@@ -163,6 +175,9 @@ function play_video(video_file) {
       playbox.style.height = "729px"
     }
   })
+  if(isfullscreen.value){
+    setTimeout(()=>{player.getCssFullscreen()},1)
+  }
 }
 
 function play(item) {
