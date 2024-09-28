@@ -123,7 +123,7 @@ async function init() {
     if (fullscreen_hash !== null) {
       isfullscreen.value = fullscreen_hash[1] === 'true'
     }
-    let starttime_hash = hash.match("fullscreen=(.*)")
+    let starttime_hash = hash.match("starttime=(.*)")
     if (starttime_hash !== null) {
       starttime.value = starttime_hash[1]
     }
