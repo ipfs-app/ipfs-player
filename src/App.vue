@@ -103,6 +103,8 @@ const mirrors = ref([])
 const url = ref("")
 const hash = import.meta.env.VITE_GIT_COMMIT_HASH;
 const showDonate = location.hostname!=='ipfs-gw.imba.cc'
+const isfullscreen = ref(false)
+const starttime = ref(0)
 async function init() {
   let hash = window.location.hash;
   let files_json = "./files.json"
@@ -114,6 +116,15 @@ async function init() {
       if (files_json.slice(0, 6) !== "/ipfs/") {
         files_json = "/ipfs/" + files_json
       }
+    }
+
+    let fullscreen_hash = hash.match("fullscreen=(.*)")
+    if (fullscreen_hash !== null) {
+      isfullscreen.value = fullscreen_hash[1] === 'true'
+    }
+    let starttime_hash = hash.match("starttime=(.*)")
+    if (starttime_hash !== null) {
+      starttime.value = starttime_hash[1]
     }
   }
   Axios.get("https://raw.githubusercontent.com/ipfs/public-gateway-checker/main/gateways.json").then((res) => {
