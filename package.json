@@ -14,9 +14,9 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.0",
+    "@vitejs/plugin-vue": "^5.2.1",
     "child_process": "^1.0.2",
-    "video.js": "^8.16.1",
+    "video.js": "^8.19.1",
     "vite": "^5.4.11"
   }
 }
