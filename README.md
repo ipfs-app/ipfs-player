@@ -4,7 +4,7 @@
 
 > 播放器将在ipfs网络上发布，用户可以使用IPFS网关进行访问。
 
-演示地址：[Demo1](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeibwh5xkfbsndltam66jc5srfpuscwxtxhych2qtnwqnrfj7mxacqa/)
+演示地址：[Demo1](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeia654mvafsj5yqnf7vdkoofqiglle3jjnsgddw5mntesd3xebm57m/)
 
 单集视频播放效果
 
@@ -32,9 +32,9 @@
 
 |      数据加载方式       | 播放MP4                                                                                                                                                                                                | 播放M3U8                                                                                                                                                                                               | videojs 播放器  |
 |:-----------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-|   内建files.json    | [Demo1](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeibwh5xkfbsndltam66jc5srfpuscwxtxhych2qtnwqnrfj7mxacqa/)                                                                                         | [Demo4](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeibuthuoumgclwsmb7gwk53l72q2yqty4ldaiyyjwujm6etsh5g7sa/)                                                                                         | [Demo7](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeiarkzootyfqxay2ojyyouqkrwflna6oqdujatuhhrw6vmyeoffy7i/)   
-| 指定files.json的hash | [Demo2](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeibwh5xkfbsndltam66jc5srfpuscwxtxhych2qtnwqnrfj7mxacqa/#files.json=bafkreidxpp6jgyral6mumbydufrrit7hyeqboubkoqkalqleamky3qvcoq)                  | [Demo5](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeibwh5xkfbsndltam66jc5srfpuscwxtxhych2qtnwqnrfj7mxacqa/#files.json=bafkreiaaqgt3iqszfg22qgalatm3vxxiappw4tfh5ujeoes4i7gjk7w4ge)                  |
-|  指定files.json的路径  | [Demo3](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeibwh5xkfbsndltam66jc5srfpuscwxtxhych2qtnwqnrfj7mxacqa/#files.json=/ipfs/bafybeigvraepp3nmhpoohuybvmcfjkpsdtv3cvhsz6vafxn5675ahsmiue/files.json) | [Demo6](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeibwh5xkfbsndltam66jc5srfpuscwxtxhych2qtnwqnrfj7mxacqa/#files.json=/ipfs/bafybeidvdwluytvf2f5e374lk5kvcg63ivdvbwvixmrreb43725xtot73i/files.json) |
+|   内建files.json    | [Demo1](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeia654mvafsj5yqnf7vdkoofqiglle3jjnsgddw5mntesd3xebm57m/)                                                                                         | [Demo4](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeielpqtlctqay3anf7lmgkfabknlyl6hb5exurjgcxxg6q5fviotam/)                                                                                         | [Demo7](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeicozvevmxjwyeyqprez56z3xpssdzxg2eecrjcoo4uzdqvihprou4/)   
+| 指定files.json的hash | [Demo2](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeia654mvafsj5yqnf7vdkoofqiglle3jjnsgddw5mntesd3xebm57m/#files.json=bafkreidxpp6jgyral6mumbydufrrit7hyeqboubkoqkalqleamky3qvcoq)                  | [Demo5](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeia654mvafsj5yqnf7vdkoofqiglle3jjnsgddw5mntesd3xebm57m/#files.json=bafkreiaaqgt3iqszfg22qgalatm3vxxiappw4tfh5ujeoes4i7gjk7w4ge)                  |
+|  指定files.json的路径  | [Demo3](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeia654mvafsj5yqnf7vdkoofqiglle3jjnsgddw5mntesd3xebm57m/#files.json=/ipfs/bafybeigvraepp3nmhpoohuybvmcfjkpsdtv3cvhsz6vafxn5675ahsmiue/files.json) | [Demo6](http://ipfs-gw.home.dlimba.top:89/ipfs/bafybeia654mvafsj5yqnf7vdkoofqiglle3jjnsgddw5mntesd3xebm57m/#files.json=/ipfs/bafybeidvdwluytvf2f5e374lk5kvcg63ivdvbwvixmrreb43725xtot73i/files.json) |
 
 # 捐赠
 ![支付宝捐赠](img/donate_alipay.jpg)
