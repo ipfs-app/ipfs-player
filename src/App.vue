@@ -103,7 +103,7 @@ const labels = ref([])
 const mirrors = ref([])
 const url = ref("")
 const hash = import.meta.env.VITE_GIT_COMMIT_HASH;
-const showDonate = location.hostname!=='ipfs-gw.imba.cc'
+const showDonate = !location.hostname.includes('imba')
 const isfullscreen = ref(false)
 const starttime = ref(0)
 async function init() {
@@ -146,6 +146,12 @@ async function init() {
     if (res.data.labels !== undefined) {
       labels.value = labels.value.concat(res.data.labels)
     }
+  }).catch(() => {
+    const playerEl = document.getElementById('player')
+    playerEl.innerHTML = `<div class="alert alert-danger m-3" role="alert">
+      <h4 class="alert-heading">加载失败</h4>
+      <p>加载 files.json 不成功，请前往 <a href="https://github.com/ipfs-app/ipfs-player" target="_blank" class="alert-link">GitHub</a> 查看配置说明</p>
+    </div>`
   });
 }
 
