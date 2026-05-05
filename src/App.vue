@@ -88,6 +88,7 @@ import {ref, onMounted} from 'vue'
 import Axios from 'axios'
 import xgplayer from 'xgplayer';
 import HlsJsPlugin from 'xgplayer-hls.js';
+import Mp4Plugin from "xgplayer-mp4"
 import 'xgplayer/dist/index.min.css';
 
 onMounted(() => {
@@ -161,16 +162,20 @@ function play_video(video_file) {
   } else {
     document.title = title.value + " " + num.value + " IPFS Player"
   }
-  const player = new xgplayer({
+  const playerConfig = {
     id: 'player',
     url: video_file.url,
-    plugins: video_file.type === "m3u8" ? [HlsJsPlugin] : [],
+    plugins: video_file.type === "m3u8" ? [HlsJsPlugin] : [Mp4Plugin],
     height: "729",
     width: "1296",
     autoplay: true,
     poster: cover,
     startTime: starttime.value,
-  });
+  };
+  if (video_file.thumbnail) {
+    playerConfig.thumbnail = video_file.thumbnail;
+  }
+  const player = new xgplayer(playerConfig);
   player.on(xgplayer.Events.CSS_FULLSCREEN_CHANGE, (isFullscreen) => {
     const playbox = document.getElementById("player")
     if (isFullscreen) {
